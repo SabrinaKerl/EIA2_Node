@@ -73,4 +73,4 @@ function findStudent(searchedMatrikel, _callback) {
     }
 }
 exports.findStudent = findStudent;
-//# sourceMappingURL=Aufg 8.js.map
+//# sourceMappingURL=Database.js.map
