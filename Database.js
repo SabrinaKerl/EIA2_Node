@@ -16,7 +16,7 @@ let students;
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
     databaseURL = "mongodb://testuser:testpassword1@ds143070.mlab.com:43070/database_mongodb";
-    databaseName = "database-mongodb";
+    databaseName = "database_mongodb";
 }
 // handleConnect wird aufgerufen wenn der Versuch, die Connection zur Datenbank herzustellen, erfolgte
 Mongo.MongoClient.connect(databaseURL, handleConnect);

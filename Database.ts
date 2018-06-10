@@ -9,8 +9,8 @@
 import * as Mongo from "mongodb";
 console.log("Database starting");
 
-   
-    
+
+
 let databaseURL: string = "mongodb://localhost:27017";
 let databaseName: string = "Test";
 let db: Mongo.Db;
@@ -20,7 +20,7 @@ let students: Mongo.Collection;
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
     databaseURL = "mongodb://testuser:testpassword1@ds143070.mlab.com:43070/database_mongodb";
-    databaseName = "database-mongodb";
+    databaseName = "database_mongodb";
 }
 
 // handleConnect wird aufgerufen wenn der Versuch, die Connection zur Datenbank herzustellen, erfolgte
@@ -61,7 +61,7 @@ export function findAll(_callback: Function): void {
                 line += "\n";
             }
             _callback(line);
-        } 
+        }
     }
 }
 
