@@ -4,7 +4,7 @@
     Datum: 10.06.18
     
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Sabrina Kerl, Anna Lotz und Tim Lieberherr erarbeitet*/ 
+    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Franziska Heiﬂ, Anna Lotz und Tim Lieberherr erarbeitet*/ 
 
 import * as Mongo from "mongodb";
 console.log("Database starting");
@@ -19,7 +19,7 @@ let students: Mongo.Collection;
 // wenn wir auf heroku sind...
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
-    databaseURL = "mongodb://testuser:testpassword1@ds245170.mlab.com:45170/database-mongodb";
+    databaseURL = "mongodb://testuser:testpassword1@ds143070.mlab.com:43070/database_mongodb";
     databaseName = "database-mongodb";
 }
 

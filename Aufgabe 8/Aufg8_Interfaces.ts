@@ -5,7 +5,8 @@ namespace Aufgabe8 {
     Matrikel: 257167
     Datum: 10.06.18
     
-    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/ 
+    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Franziska Heiß, Anna Lotz und Tim Lieberherr erarbeitet*/
     
     
     // Struktur des heterogenen assoziativen Arrays als Datensatz für eine studierende Person

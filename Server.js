@@ -4,7 +4,7 @@
     Datum: 10.06.18
     
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Sabrina Kerl, Anna Lotz und Tim Lieberherr erarbeitet*/
+    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Franziska Hei�, Anna Lotz und Tim Lieberherr erarbeitet*/
 "use strict";
 const Http = require("http");
 const Url = require("url");
