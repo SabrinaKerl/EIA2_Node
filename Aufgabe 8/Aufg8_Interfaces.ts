@@ -1,14 +1,12 @@
-/*
-    Aufgabe 8: ClientServer - StudiVZ
+namespace Aufgabe8 {
+    
+/*  Aufgabe: Aufgabe 8: ClientServer - StudiVZ
     Name: Sabrina Kerl
     Matrikel: 257167
     Datum: 10.06.18
     
-    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Sabrina Kerl, Anna Lotz und Tim Lieberherr erarbeitet
-*/ 
-
-namespace Aufgabe6 {
+    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/ 
+    
     
     // Struktur des heterogenen assoziativen Arrays als Datensatz für eine studierende Person
     export interface Studi {
