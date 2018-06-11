@@ -60,7 +60,7 @@ export function findAll(_callback: Function): void {
                 line += studentArray[i].gender ? "(M)" : "(F)";
                 line += "\n";
             }
-            //string.includes(searchvalue, start)
+            /*string.includes(searchvalue, start)
             if (Studi[].includes(matrikel) == "true") {
                 alert("Matrikel bereits vorhanden");
             } else {
@@ -69,7 +69,7 @@ export function findAll(_callback: Function): void {
                     line += studentArray[i].matrikel + ": " + studentArray[i].name + ", " + studentArray[i].firstname + ", " + studentArray[i].studyPath + ", " + studentArray[i].age + ", ";
                     line += studentArray[i].gender ? "(M)" : "(F)";
                     line += "\n";
-                }
+                }*/
                 _callback(line);
             }
         }
