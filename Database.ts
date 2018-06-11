@@ -63,7 +63,7 @@ export function findAll(_callback: Function): void {
             //string.includes(searchvalue, start)
             function checkAnswer(_e: Mongo.MongoError, studentArray: Studi[]): void {
                 if (Studi[].includes(matrikel) == "true") {
-                    alert("Matrikel bereits vorhanden");
+                    _callback("Matrikel bereits vorhanden");
                 } else {
                     let line: string = "";
                     for (let i: number = 0; i < studentArray.length; i++) {

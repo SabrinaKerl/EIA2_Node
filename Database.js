@@ -53,7 +53,7 @@ function findAll(_callback) {
             //string.includes(searchvalue, start)
             function checkAnswer(_e, studentArray) {
                 if (Studi[].includes(matrikel) == "true") {
-                    alert("Matrikel bereits vorhanden");
+                    _callback("Matrikel bereits vorhanden");
                 }
                 else {
                     let line = "";
