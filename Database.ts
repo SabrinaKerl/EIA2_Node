@@ -49,6 +49,7 @@ function handleInsert(_e: Mongo.MongoError): void {
 export function findAll(_callback: Function): void {
     var cursor: Mongo.Cursor = students.find();
     cursor.toArray(prepareAnswer);
+    /*cursor.toArray(checkAnswer);*/
 
     function prepareAnswer(_e: Mongo.MongoError, studentArray: Studi[]): void {
         if (_e) {
@@ -59,8 +60,7 @@ export function findAll(_callback: Function): void {
                 line += studentArray[i].matrikel + ": " + studentArray[i].name + ", " + studentArray[i].firstname + ", " + studentArray[i].studyPath + ", " + studentArray[i].age + ", ";
                 line += studentArray[i].gender ? "(M)" : "(F)";
                 line += "\n";
-            }
-            //string.includes(searchvalue, start)
+            /*string.includes(searchvalue, start)
             function checkAnswer(_e: Mongo.MongoError, studentArray: Studi[]): void {
                 if (Studi[].includes(matrikel) == "true") {
                     _callback("Matrikel bereits vorhanden");
@@ -69,7 +69,7 @@ export function findAll(_callback: Function): void {
                     for (let i: number = 0; i < studentArray.length; i++) {
                         line += studentArray[i].matrikel + ": " + studentArray[i].name + ", " + studentArray[i].firstname + ", " + studentArray[i].studyPath + ", " + studentArray[i].age + ", ";
                         line += studentArray[i].gender ? "(M)" : "(F)";
-                        line += "\n";
+                        line += "\n";*/
                     }
                     _callback(line);
                 }

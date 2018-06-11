@@ -39,6 +39,7 @@ function handleInsert(_e) {
 function findAll(_callback) {
     var cursor = students.find();
     cursor.toArray(prepareAnswer);
+    /*cursor.toArray(checkAnswer);*/
     function prepareAnswer(_e, studentArray) {
         if (_e) {
             _callback("Error" + _e);
@@ -50,41 +51,27 @@ function findAll(_callback) {
                 line += studentArray[i].gender ? "(M)" : "(F)";
                 line += "\n";
             }
-            //string.includes(searchvalue, start)
-            function checkAnswer(_e, studentArray) {
-                if (Studi[].includes(matrikel) == "true") {
-                    _callback("Matrikel bereits vorhanden");
-                }
-                else {
-                    let line = "";
-                    for (let i = 0; i < studentArray.length; i++) {
-                        line += studentArray[i].matrikel + ": " + studentArray[i].name + ", " + studentArray[i].firstname + ", " + studentArray[i].studyPath + ", " + studentArray[i].age + ", ";
-                        line += studentArray[i].gender ? "(M)" : "(F)";
-                        line += "\n";
-                    }
-                    _callback(line);
-                }
-            }
+            _callback(line);
         }
-        function findStudent(searchedMatrikel, _callback) {
-            var myCursor = students.find({ "matrikel": searchedMatrikel }).limit(1);
-            myCursor.next(prepareStudent);
-            function prepareStudent(_e, studi) {
-                if (_e) {
-                    _callback("Error" + _e);
-                }
-                if (studi) {
-                    let line = studi.matrikel + ": " + studi.name + ", " + studi.firstname + ", " + studi.studyPath + ", " + studi.age + ", ";
-                    line += studi.gender ? "(M)" : "(F)";
-                    _callback(line);
-                }
-                else {
-                    _callback("No Match found");
-                }
-            }
-        }
-        exports.findStudent = findStudent;
     }
 }
 exports.findAll = findAll;
+function findStudent(searchedMatrikel, _callback) {
+    var myCursor = students.find({ "matrikel": searchedMatrikel }).limit(1);
+    myCursor.next(prepareStudent);
+    function prepareStudent(_e, studi) {
+        if (_e) {
+            _callback("Error" + _e);
+        }
+        if (studi) {
+            let line = studi.matrikel + ": " + studi.name + ", " + studi.firstname + ", " + studi.studyPath + ", " + studi.age + ", ";
+            line += studi.gender ? "(M)" : "(F)";
+            _callback(line);
+        }
+        else {
+            _callback("No Match found");
+        }
+    }
+}
+exports.findStudent = findStudent;
 //# sourceMappingURL=Database.js.map
