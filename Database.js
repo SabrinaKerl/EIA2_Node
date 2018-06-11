@@ -50,27 +50,39 @@ function findAll(_callback) {
                 line += studentArray[i].gender ? "(M)" : "(F)";
                 line += "\n";
             }
-            _callback(line);
+            //string.includes(searchvalue, start)
+            if (Studi[].includes(matrikel) == "true") {
+                alert("Matrikel bereits vorhanden");
+            }
+            else {
+                let line = "";
+                for (let i = 0; i < studentArray.length; i++) {
+                    line += studentArray[i].matrikel + ": " + studentArray[i].name + ", " + studentArray[i].firstname + ", " + studentArray[i].studyPath + ", " + studentArray[i].age + ", ";
+                    line += studentArray[i].gender ? "(M)" : "(F)";
+                    line += "\n";
+                }
+                _callback(line);
+            }
         }
     }
+    function findStudent(searchedMatrikel, _callback) {
+        var myCursor = students.find({ "matrikel": searchedMatrikel }).limit(1);
+        myCursor.next(prepareStudent);
+        function prepareStudent(_e, studi) {
+            if (_e) {
+                _callback("Error" + _e);
+            }
+            if (studi) {
+                let line = studi.matrikel + ": " + studi.name + ", " + studi.firstname + ", " + studi.studyPath + ", " + studi.age + ", ";
+                line += studi.gender ? "(M)" : "(F)";
+                _callback(line);
+            }
+            else {
+                _callback("No Match found");
+            }
+        }
+    }
+    exports.findStudent = findStudent;
 }
 exports.findAll = findAll;
-function findStudent(searchedMatrikel, _callback) {
-    var myCursor = students.find({ "matrikel": searchedMatrikel }).limit(1);
-    myCursor.next(prepareStudent);
-    function prepareStudent(_e, studi) {
-        if (_e) {
-            _callback("Error" + _e);
-        }
-        if (studi) {
-            let line = studi.matrikel + ": " + studi.name + ", " + studi.firstname + ", " + studi.studyPath + ", " + studi.age + ", ";
-            line += studi.gender ? "(M)" : "(F)";
-            _callback(line);
-        }
-        else {
-            _callback("No Match found");
-        }
-    }
-}
-exports.findStudent = findStudent;
 //# sourceMappingURL=Database.js.map

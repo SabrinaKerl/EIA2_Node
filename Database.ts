@@ -4,7 +4,7 @@
     Datum: 10.06.18
     
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Franziska Heiﬂ, Anna Lotz und Tim Lieberherr erarbeitet*/ 
+    Dieser Code wurde zusammen mit Alena Hurst, Sofia Gschwend, Franziska Heiﬂ, Anna Lotz und Tim Lieberherr erarbeitet*/
 
 import * as Mongo from "mongodb";
 console.log("Database starting");
@@ -60,26 +60,36 @@ export function findAll(_callback: Function): void {
                 line += studentArray[i].gender ? "(M)" : "(F)";
                 line += "\n";
             }
-            _callback(line);
+            //string.includes(searchvalue, start)
+            if (Studi[].includes(matrikel) == "true") {
+                alert("Matrikel bereits vorhanden");
+            } else {
+                let line: string = "";
+                for (let i: number = 0; i < studentArray.length; i++) {
+                    line += studentArray[i].matrikel + ": " + studentArray[i].name + ", " + studentArray[i].firstname + ", " + studentArray[i].studyPath + ", " + studentArray[i].age + ", ";
+                    line += studentArray[i].gender ? "(M)" : "(F)";
+                    line += "\n";
+                }
+                _callback(line);
+            }
         }
     }
-}
 
-export function findStudent(searchedMatrikel: number, _callback: Function): void {
-    var myCursor: Mongo.Cursor = students.find({ "matrikel": searchedMatrikel }).limit(1);
-    myCursor.next(prepareStudent);
+    export function findStudent(searchedMatrikel: number, _callback: Function): void {
+        var myCursor: Mongo.Cursor = students.find({ "matrikel": searchedMatrikel }).limit(1);
+        myCursor.next(prepareStudent);
 
-    function prepareStudent(_e: Mongo.MongoError, studi: Studi): void {
-        if (_e) {
-            _callback("Error" + _e);
-        }
+        function prepareStudent(_e: Mongo.MongoError, studi: Studi): void {
+            if (_e) {
+                _callback("Error" + _e);
+            }
 
-        if (studi) {
-            let line: string = studi.matrikel + ": " + studi.name + ", " + studi.firstname + ", " + studi.studyPath + ", " + studi.age + ", ";
-            line += studi.gender ? "(M)" : "(F)";
-            _callback(line);
-        } else {
-            _callback("No Match found");
+            if (studi) {
+                let line: string = studi.matrikel + ": " + studi.name + ", " + studi.firstname + ", " + studi.studyPath + ", " + studi.age + ", ";
+                line += studi.gender ? "(M)" : "(F)";
+                _callback(line);
+            } else {
+                _callback("No Match found");
+            }
         }
     }
-}
